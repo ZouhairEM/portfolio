@@ -7,11 +7,11 @@ interface ILayout {
 
 function Layout({ children }: ILayout) {
   return (
-    <div>
+    <>
       <NavBar />
       {children}
       <FooterNav />
-    </div>
+    </>
   );
 }
 

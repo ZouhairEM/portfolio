@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { Github, ExternalLink } from 'lucide-react';
 
 interface ProjectBioProps {
   project: {
@@ -12,34 +13,31 @@ interface ProjectBioProps {
 
 function ProjectBio({ project }: ProjectBioProps) {
   return (
-    <div className="flex flex-col items-center rounded-2xl bg-primary-100 p-6 text-white text-sm shadow-xl">
-      <p className="text-white">{project.title}</p>
+    <div className="flex flex-col gap-4 rounded bg-primary-100 px-6 py-4 text-sm text-white shadow-xl">
+      <h3>{project.title}</h3>
       <Image
         src={project.thumbnail}
         alt={project.thumbnail}
         width={200}
-        height={100}
-        className="w-10/12/12 sm:w-full rounded-2xl shadow-inner my-3 opacity-80"
+        height={200}
+        className="rounded object-contain opacity-90 sm:h-full"
       />
-      <div className="flex flex-col justify-between h-28">
-        <div className="text-white my-4">
-          Tech used:
-          <i className="ml-1 leading-5 text-secondary">{project.tech}</i>
-        </div>
-        <div className="py-2 mx-auto sm:mx-0">
+      <h4>{project.tech}</h4>
+      <div className="flex w-full flex-col justify-between">
+        <div className="flex gap-2">
           <a
             href={project.repo}
             target="_blank"
-            className="mr-2 rounded-lg border border-secondary bg-primary-200 p-2 px-3 text-white hover:bg-tertiary"
+            className="rounded bg-primary-200 p-2 text-white hover:bg-tertiary"
           >
-            Source Code
+            <Github width={20} />
           </a>
           <a
             href={project.demo}
             target="_blank"
-            className="rounded-lg border border-secondary bg-primary-200 p-2 px-3 text-white hover:bg-tertiary"
+            className="rounded bg-primary-200 p-2 text-white hover:bg-tertiary"
           >
-            Live Demo
+            <ExternalLink width={20} />
           </a>
         </div>
       </div>

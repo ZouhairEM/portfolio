@@ -1,9 +1,9 @@
 function NavBar() {
   return (
     <>
-      <nav className="text-tertiary p-2 border-t border-lines border-tertiary">
-        <div className="block sm:hidden absolute">
-          <button className="flex items-center px-3 rounded">
+      <nav className="border-lines border-t border-tertiary text-tertiary">
+        <div className="absolute block sm:hidden">
+          <button className="flex items-center rounded px-3">
             {/* <svg height="48" width="48" fill="white">
           <path d="M6 36v-3h36v3Zm0-10.5v-3h36v3ZM6 15v-3h36v3Z" />
         </svg> */}
@@ -13,18 +13,18 @@ function NavBar() {
         </svg> */}
           </button>
         </div>
-        <ul className="flex container flex-col sm:flex-row h-screen sm:h-auto text-center items-center justify-center sm:flex">
-          <li className="cursor-pointer mr-0 sm:mr-10 p-2 text-tertiary hover:text-white">
+        <ul className="container flex h-screen flex-col items-center justify-center py-2 text-center sm:flex sm:h-auto sm:flex-row">
+          <li className="cursor-pointer text-tertiary hover:text-white sm:mr-10">
             About
           </li>
-          <li className="cursor-pointer mr-0 sm:mr-10 p-2 text-tertiary hover:text-white">
+          <li className="cursor-pointer text-tertiary hover:text-white sm:mr-10">
             Skills
           </li>
-          <li className="cursor-pointer  mr-0 sm:mr-auto p-2 text-tertiary hover:text-white">
+          <li className="cursor-pointer text-tertiary hover:text-white sm:mr-auto">
             Work
           </li>
           <a target="_blank">
-            <li className="cursor-pointer px-2 py-1 m-1 bg-white rounded shadow text-primary-200 font-bold hover:bg-primary-200 hover:text-white">
+            <li className="cursor-pointer rounded bg-white px-2 py-1 font-bold text-primary-200 shadow hover:bg-primary-200 hover:text-white">
               Resume
             </li>
           </a>

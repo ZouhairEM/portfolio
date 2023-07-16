@@ -7,22 +7,57 @@ import ProjectBio from '@/components/ProjectBio';
 
 export default function Home() {
   const aboutMeText =
-    "Currently I'm working as a consultant frontend developer based in The Netherlands. Before that, I studied web development and obtained a BE degree in IT & Media Design.";
+    'Currently working as a frontend developer based in The Netherlands. Before that, I studied web development and obtained a Bachelor of Engineering degree in IT & Media Design.';
 
   const project = [
     {
       title: 'Example',
       thumbnail: '/../public/me.jpeg',
-      tech: 'Example',
+      tech: 'CMS, SSG, Testing',
+      repo: '',
+      demo: '',
+    },
+    {
+      title: 'Example',
+      thumbnail: '/../public/monitoring.png',
+      tech: 'React.JS, Tailwind CSS',
+      repo: '',
+      demo: '',
+    },
+    {
+      title: 'Example',
+      thumbnail: '/../public/me.jpeg',
+      tech: 'React.JS, Bootstrap',
+      repo: '',
+      demo: '',
+    },
+    {
+      title: 'Example',
+      thumbnail: '/../public/me.jpeg',
+      tech: 'Vue 2, Bootstrap, Testing',
       repo: '',
       demo: '',
     },
   ];
 
+  const skills = [
+    ['Javascript', '/../public/skills/JavaScript-logo.webp'],
+    ['Typescript', '/../public/skills/JavaScript-logo.webp'],
+    ['SASS', '/../public/skills/JavaScript-logo.webp'],
+    ['React', '/../public/skills/JavaScript-logo.webp'],
+    ['Rx.js', '/../public/skills/JavaScript-logo.webp'],
+    ['Tailwind CSS', '/../public/skills/JavaScript-logo.webp'],
+    ['Vue', '/../public/skills/JavaScript-logo.webp'],
+    ['Testing', '/../public/skills/JavaScript-logo.webp'],
+  ];
+
   return (
     <Layout>
-      <main className="flex min-h-screen flex-col items-center justify-between p-24">
-        <section className="flex flex-col md:flex-row justify-center items-center min-h-screen mx-auto">
+      <main className="container flex min-h-screen flex-col items-center justify-between">
+        <section
+          id="bio"
+          className="mx-auto flex min-h-screen flex-col items-center justify-center md:flex-row"
+        >
           <div className="text-center sm:text-left">
             <BioBlock />
           </div>
@@ -30,40 +65,25 @@ export default function Home() {
             src="/me.jpeg"
             width={500}
             height={500}
-            className="w-40 rounded-full shadow-inner opacity-80 ml-0 md:ml-20"
+            className="ml-0 w-40 rounded-full opacity-80 shadow-inner md:ml-20"
             alt="Zouhair El-Mariami"
           />
         </section>
-        <section>
-          <div className="flex justify-center mb-16">
-            <h1 className="font-bold text-4xl text-white text-center border-b-4 border-tertiary">
-              About
-            </h1>
-          </div>
-          <About aboutMe={aboutMeText} />
-        </section>
-        <section id="skills" className="mt-16 sm:mt-32 mb-16 p-6">
-          <div className="flex justify-center">
-            <h1 className="font-bold text-4xl text-white text-center border-b-4 border-tertiary">
-              Skills
-            </h1>
-          </div>
-        </section>
-        <section>
-          <ul className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-10 bg-primary-100 p-12 shadow-2xl rounded-2xl">
-            {[1, 2, 3, 4, 5, 6].map((el, i) => (
-              <LearnedSkill skill={'x'} key={i} />
-            ))}
-          </ul>
-        </section>
-        <section className="mt-16 sm:mt-32 mb-16 p-6">
-          <div className="flex justify-center">
-            <h1 className="font-bold text-4xl text-white text-center border-b-4 border-tertiary">
-              Work
-            </h1>
-          </div>
-        </section>
-        <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mx-auto sm:mx-0 gap-6 gap-y-8 sm:gap-y-10">
+        <div className="grid grid-cols-12 gap-14 lg:gap-6">
+          <section className="col-span-12 flex items-center lg:col-span-5">
+            <About aboutMe={aboutMeText} />
+          </section>
+          <section id="skills" className="col-span-12 lg:col-span-5">
+            <div className="flex justify-center"></div>
+            <ul className="grid grid-cols-1 gap-10 rounded shadow-2xl sm:grid-cols-3 lg:grid-cols-4">
+              {skills.map(([skill, img]) => (
+                <LearnedSkill skill={skill} img={img} key={skill} />
+              ))}
+            </ul>
+          </section>
+        </div>
+
+        <section className="my-40 grid w-full grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {project.map((project, i) => (
             <ProjectBio project={project} key={i} />
           ))}
