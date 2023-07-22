@@ -5,23 +5,20 @@ import LearnedSkill from '@/components/LearnedSkill';
 import ProjectBio from '@/components/ProjectBio';
 
 export default function Home() {
-  const aboutMeText =
-    "I've been working as a frontend developer professionally since 2021. Before that, I got a Bachelor of Engineering degree studying frontend development. For this education, I've had 1,5 years of experience working as an intern.";
-
   const project = [
-    {
-      title: 'CMS Portfolio',
-      thumbnail: '/../public/tv_shows_app.png',
-      tech: 'CMS, SSG, Testing',
-      repo: '',
-      demo: null,
-    },
     {
       title: 'Monitoring App',
       thumbnail: '/../public/monitoring.png',
       tech: 'React.JS, Tailwind CSS',
       repo: '',
       demo: 'https://zouhairem.github.io/monitoring',
+    },
+    {
+      title: 'CMS Portfolio',
+      thumbnail: '/../public/tv_shows_app.png',
+      tech: 'CMS, SSG, Testing',
+      repo: '',
+      demo: null,
     },
     {
       title: 'Pokédex',
@@ -42,11 +39,14 @@ export default function Home() {
   const skills = [
     ['HTML', '/../public/skills/html5.png', 'HTML5 logo'],
     ['CSS', '/../public/skills/css3.png', 'CSS3 logo'],
-    ['Javascript', '/../public/skills/javascript.png', 'Javascript logo'],
+    ['Javascript', '/../public/skills/js.png', 'Javascript logo'],
     ['Typescript', '/../public/skills/typescript.png', 'Typescript logo'],
     ['React.JS', '/../public/skills/reactjs.png', 'React.JS logo'],
     ['Next.JS', '/../public/skills/next.png', 'Next.JS logo'],
     ['Vue.JS', '/../public/skills/vuejs.png', 'Vue.JS logo'],
+    ['Angular 2', '/../public/skills/angular2.png', 'Angular 2 logo'],
+    ['RxJS', '/../public/skills/rxjs.png', 'RxJS logo'],
+    ['Tailwind CSS', '/../public/skills/tailwind.png', 'Tailwind CSS logo'],
     ['Testing', '/../public/skills/testing.png', 'Cypress logo'],
   ];
 
@@ -67,23 +67,22 @@ export default function Home() {
           />
         </section>
         <div className="grid grid-cols-12 gap-14 lg:gap-10">
-          <section className="col-span-12 flex lg:col-span-6">
-            <p>
-              <h2 className="mb-2">About me</h2>
-              {/* {aboutMeText} */}
-              <div className="flex flex-col gap-2">
-                <p>
-                  I've been working since 2021 and before that I was an eager
-                  student learning frontend development at Fontys University,
-                  graduating with a Bachelor of Engineering degree.
-                </p>
-                <p>
-                  In my day to day life I like to work out to stay fit mentally,
-                  join hackatons to keep my skills sharp and watch anime to
-                  relax.
-                </p>
-              </div>
-            </p>
+          <section
+            id="about"
+            className="col-span-12 flex flex-col lg:col-span-6"
+          >
+            <h2 className="mb-2">About me</h2>
+            <div className="flex flex-col gap-2">
+              <p>
+                I've been working since 2021 and before that I was an eager
+                student learning frontend development at Fontys University,
+                graduating with a Bachelor of Engineering degree.
+              </p>
+              <p>
+                In my day to day life I like to work out to stay fit mentally,
+                join hackatons to keep my skills sharp and watch anime to relax.
+              </p>
+            </div>
           </section>
           <section id="skills" className="col-span-12 lg:col-span-6">
             <h2 className="mb-2">Skills</h2>
@@ -94,8 +93,7 @@ export default function Home() {
             </ul>
           </section>
         </div>
-
-        <section className="my-40">
+        <section id="passion-projects" className="my-40">
           <h2 className="mb-4">Passion projects</h2>
           <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {project.map((project, i) => (
