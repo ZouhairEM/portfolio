@@ -3,7 +3,7 @@ function NavBar() {
     <>
       <nav className="border-lines border-t border-tertiary text-tertiary">
         <div className="absolute block sm:hidden">
-          <button className="flex items-center rounded px-3">
+          <button className="flex items-center rounded-sm px-3">
             {/* <svg height="48" width="48" fill="white">
           <path d="M6 36v-3h36v3Zm0-10.5v-3h36v3ZM6 15v-3h36v3Z" />
         </svg> */}
@@ -15,16 +15,16 @@ function NavBar() {
         </div>
         <ul className="container flex h-screen flex-col items-center justify-center py-2 text-center sm:flex sm:h-auto sm:flex-row">
           <li className="cursor-pointer text-tertiary hover:text-white sm:mr-10">
-            About
+            About me
           </li>
           <li className="cursor-pointer text-tertiary hover:text-white sm:mr-10">
             Skills
           </li>
           <li className="cursor-pointer text-tertiary hover:text-white sm:mr-auto">
-            Work
+            Passion projects
           </li>
           <a target="_blank">
-            <li className="cursor-pointer rounded bg-white px-2 py-1 font-bold text-primary-200 shadow hover:bg-primary-200 hover:text-white">
+            <li className="cursor-pointer rounded-sm bg-white px-2 py-1 font-bold text-primary-200 shadow hover:bg-primary-200 hover:text-white">
               Resume
             </li>
           </a>

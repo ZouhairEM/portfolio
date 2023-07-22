@@ -3,22 +3,21 @@ import Image from 'next/image';
 interface LearnedSkillProps {
   skill: string;
   img: string;
+  alt: string;
 }
 
-function LearnedSkill({ skill, img }: LearnedSkillProps) {
+function LearnedSkill({ skill, img, alt }: LearnedSkillProps) {
   return (
-    <li className="flex items-center justify-center gap-4 sm:ml-0">
-      <span className="grid grid-cols-5 gap-2 text-white shadow-inner">
-        <Image
-          src={img}
-          width={30}
-          height={30}
-          className="col-span-2 ml-auto rounded opacity-80 shadow-2xl"
-          alt={skill}
-        />
-        <p className="grid-cols-5">{skill}</p>
-      </span>
-    </li>
+    <span className="m-2 flex items-center gap-2 text-white shadow-inner">
+      <Image
+        src={img}
+        width={25}
+        height={25}
+        className="col-span-2 ml-auto rounded-sm opacity-90 shadow-2xl"
+        alt={alt}
+      />
+      <p className="grid-cols-5">{skill}</p>
+    </span>
   );
 }
 

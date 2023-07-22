@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* * {
+  outline: solid 0.1px;
+} */
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -27,13 +31,17 @@ body {
 }
 
 h1 {
-  @apply border-tertiary text-4xl font-bold text-white;
+  @apply border-tertiary text-6xl font-bold text-white;
 }
 
 h2 {
-  @apply text-5xl font-bold text-white sm:text-7xl;
+  @apply text-4xl font-bold text-white;
 }
 h3 {
+  @apply text-2xl font-medium text-white;
+}
+
+h4 {
   @apply text-lg font-medium text-white;
 }
 
