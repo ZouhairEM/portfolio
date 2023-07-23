@@ -15,13 +15,13 @@ function FooterNav() {
                   width={25}
                   height={25}
                   alt="#"
-                  className="opacity-80 hover:opacity-100"
+                  className="opacity-80 transition-colors hover:opacity-100"
                 />
               </a>
             </span>
           </li>
         </ul>
-        <div className="mb-3 text-tertiary sm:mb-0">
+        <div className="mb-3 text-white sm:mb-0">
           Zouhair El-Mariami {currentYear} ©
         </div>
       </div>

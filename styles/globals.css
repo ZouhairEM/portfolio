@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* * {
-  outline: solid 0.1px;
-} */
-
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -47,4 +43,9 @@ h4 {
 
 h5 {
   @apply text-base text-tertiary;
+}
+
+p,
+.muted {
+  color: hsl(214, 15%, 81%);
 }

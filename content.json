@@ -1,0 +1,157 @@
+{
+    "content": {
+        "aboutMe": "<p>I've been working since 2021 and before that I was an eager student learning frontend development at Fontys University, graduating with a Bachelor of Engineering degree.</p><p>In my day to day life I like to work out to stay fit mentally, join hackathons to keep my skills sharp, and watch anime to relax.</p>",
+        "projects": [
+            {
+                "title": "Monitoring App",
+                "thumbnail": "/../public/monitoring.png",
+                "tech": [
+                    "React.JS",
+                    "Typescript",
+                    "Tailwind CSS"
+                ],
+                "repo": "https://github.com/ZouhairEM/monitoring/",
+                "demo": "https://zouhairem.github.io/monitoring",
+                "details": {
+                    "cover": "/monitoring_app.png",
+                    "description": "My most proud passion project. An app made to simulate monitoring patient activity for nurses. I wanted to an app as close to an enterprise level app that I could make to gain a better understanding of React.JS, Typescript, design and code structure.",
+                    "features": [
+                        "Zustand for state management",
+                        "i18Next for translations",
+                        "Customization features including dark mode, color palette and font size.",
+                        "Tailwind CSS"
+                    ],
+                    "repo": "https://github.com/ZouhairEM/monitoring/",
+                    "demo": "https://zouhairem.github.io/monitoring"
+                }
+            },
+            {
+                "title": "CMS Portfolio",
+                "thumbnail": "/../public/monitoring.png",
+                "tech": [
+                    "Next.JS",
+                    "SSG",
+                    "CMS",
+                    "Testing"
+                ],
+                "repo": "https://github.com/ZouhairEM/portfolio/",
+                "demo": null,
+                "details": {
+                    "cover": "/monitoring_app.png",
+                    "description": "My portfolio built in Next.JS. The content is statically generated with SSG using Netlify's open source CMS. This portfolio is a revamp/upgrade on what I created in 2022 with Nuxt. The reason for this change is because I wanted to learn Next.JS instead and had envisioned more features.",
+                    "features": [
+                        "Dynamic content with Netlify CMS",
+                        "Next.JS's Static Generation",
+                        "JSON Server for local setup",
+                        "Unit and E2E testing",
+                        "Tailwind CSS"
+                    ],
+                    "repo": "https://github.com/ZouhairEM/portfolio/",
+                    "demo": null
+                }
+            },
+            {
+                "title": "Pokédex",
+                "thumbnail": "/../public/monitoring.png",
+                "tech": [
+                    "React.JS",
+                    "Typescript",
+                    "Bootstrap"
+                ],
+                "repo": "https://github.com/ZouhairEM/pokemon/",
+                "demo": "https://zouhairem.github.io/pokemon/",
+                "details": {
+                    "cover": "/pokemon_project.png",
+                    "description": "Pokemon - Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, deleniti. Sequi ipsam molestias corrupti? Velit sequi autem, molestias doloribus laborum dicta, ut quis, quibusdam itaque ipsa id provident consequuntur in.",
+                    "features": [
+                        "React Router",
+                        "Typescript",
+                        "Bootstrap"
+                    ],
+                    "repo": "https://github.com/ZouhairEM/pokemon/",
+                    "demo": "https://zouhairem.github.io/pokemon/" 
+                }
+            },
+            {
+                "title": "TV Shows App",
+                "thumbnail": "/../public/monitoring.png",
+                "tech": [
+                    "Vue",
+                    "Bootstrap",
+                    "Testing"
+                ],
+                "repo": "",
+                "demo": "https://zouhairem.github.io/tvpoc/",
+                "details": {
+                    "cover": "/tv_shows_app.png",
+                    "description": "TV App - Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, deleniti. Sequi ipsam molestias corrupti? Velit sequi autem, molestias doloribus laborum dicta, ut quis, quibusdam itaque ipsa id provident consequuntur in.",
+                    "features": [
+                        "Vue 2",
+                        "Vue Router",
+                        "Unit Testing with Vue Utils",
+                        "Bootstrap"
+                    ],
+                    "repo": "https://github.com/ZouhairEM/tvpoc/",
+                    "demo": "https://zouhairem.github.io/tvpoc/"
+                }
+            }
+        ],
+        "skills": [
+            [
+                "HTML",
+                "/../public/skills/html5.png",
+                "HTML5 logo"
+            ],
+            [
+                "CSS",
+                "/../public/skills/css3.png",
+                "CSS3 logo"
+            ],
+            [
+                "Javascript",
+                "/../public/skills/js.png",
+                "Javascript logo"
+            ],
+            [
+                "Typescript",
+                "/../public/skills/typescript.png",
+                "Typescript logo"
+            ],
+            [
+                "React.JS",
+                "/../public/skills/reactjs.png",
+                "React.JS logo"
+            ],
+            [
+                "Next.JS",
+                "/../public/skills/next.png",
+                "Next.JS logo"
+            ],
+            [
+                "Vue.JS",
+                "/../public/skills/vuejs.png",
+                "Vue.JS logo"
+            ],
+            [
+                "RxJS",
+                "/../public/skills/rxjs.png",
+                "RxJS logo"
+            ],
+            [
+                "Nx",
+                "/../public/skills/nx.png",
+                "Nx logo"
+            ],
+            [
+                "Tailwind CSS",
+                "/../public/skills/tailwind.png",
+                "Tailwind CSS logo"
+            ],
+            [
+                "Testing",
+                "/../public/skills/testing.png",
+                "Cypress logo"
+            ]
+        ]
+    }
+}

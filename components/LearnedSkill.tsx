@@ -16,7 +16,7 @@ function LearnedSkill({ skill, img, alt }: LearnedSkillProps) {
         className="col-span-2 ml-auto rounded-sm opacity-90 shadow-2xl"
         alt={alt}
       />
-      <p className="grid-cols-5">{skill}</p>
+      <span className="grid-cols-5">{skill}</span>
     </span>
   );
 }

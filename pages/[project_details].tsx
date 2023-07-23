@@ -2,15 +2,36 @@ import Layout from '@/components/Layout';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { Github, ExternalLink, ArrowLeft } from 'lucide-react';
+import { Project } from '@/types/content';
 
 export default function ProjectDetails() {
   const router = useRouter();
-  const demo = true;
+  let { details } = router.query;
+
+  const title =
+    typeof router.query.title === 'string'
+      ? JSON.parse(router.query.title)
+      : '';
+
+  const demo =
+    typeof router.query.demo === 'string'
+      ? JSON.parse(router.query.demo)
+      : null;
+
+  const repo =
+    typeof router.query.repo === 'string'
+      ? JSON.parse(router.query.repo)
+      : null;
+
+  const detailsString = Array.isArray(details) ? details[0] : details;
+  const projectDetails: Project['details'] = detailsString
+    ? JSON.parse(detailsString)
+    : { cover: '', description: '', features: [] };
 
   return (
     <Layout>
-      <section>
-        <div className="container flex flex-col gap-4 py-14">
+      <main className="container flex flex-col gap-4 py-14">
+        <section className="transition-colors hover:text-secondary">
           <button
             type="button"
             className="flex gap-2"
@@ -19,50 +40,59 @@ export default function ProjectDetails() {
             <ArrowLeft />
             Back
           </button>
-          <hr className="opacity-60" />
-          <h2>Monitoring App</h2>
+        </section>
+
+        <hr className="opacity-60" />
+
+        <section>
+          <h2>{title}</h2>
           <Image
-            alt="hero"
-            width={1000}
-            height={1000}
-            src="/monitoring_app.png"
-            className="w-full rounded object-cover object-center"
+            src={projectDetails.cover}
+            width={500}
+            height={500}
+            priority
+            alt={title}
+            className="w-full rounded object-cover object-center py-4"
           />
-          <p className="py-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid,
-            deleniti. Sequi ipsam molestias corrupti? Velit sequi autem,
-            molestias doloribus laborum dicta, ut quis, quibusdam itaque ipsa id
-            provident consequuntur in.
-          </p>
-          <hr className="opacity-60" />
+          <p>{projectDetails.description}</p>
+        </section>
+
+        <hr className="opacity-60" />
+
+        <section>
           <h3>Features</h3>
           <ul className="list-disc px-4">
-            <li>i18Next translations</li>
-            <li>Tailwind CSS</li>
-            <li>Zustand for state management</li>
-            <li>i18Next translations</li>
+            {projectDetails.features.map((feature) => (
+              <li key={feature} className="muted">
+                {feature}
+              </li>
+            ))}
           </ul>
+        </section>
 
+        <hr className="opacity-60" />
+
+        <section>
           <div className="flex w-full gap-2">
             <a
-              href={''}
+              href={repo}
               target="_blank"
-              className="flex gap-2 rounded bg-primary-200 p-2 text-white hover:bg-tertiary"
+              className="flex gap-2 rounded p-2 text-white transition-colors hover:text-tertiary"
             >
               <Github width={20} /> Source Code
             </a>
             {demo && (
               <a
-                href={''}
+                href={demo ?? ''}
                 target="_blank"
-                className="flex gap-2 rounded bg-primary-200 p-2 text-white hover:bg-tertiary"
+                className="flex gap-2 rounded p-2 text-white transition-colors hover:text-tertiary"
               >
                 <ExternalLink width={20} /> Live
               </a>
             )}
           </div>
-        </div>
-      </section>
+        </section>
+      </main>
     </Layout>
   );
 }

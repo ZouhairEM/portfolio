@@ -25,19 +25,19 @@ function NavBar() {
         </button>
       </div>
       <ul className="container flex h-screen flex-col items-center justify-center py-2 text-center sm:flex sm:h-auto sm:flex-row">
-        <li className="cursor-pointer text-tertiary hover:text-white sm:mr-10">
+        <li className="cursor-pointer text-tertiary transition-colors hover:text-white sm:mr-10">
           <button onClick={() => scrollToId('about')}>About me</button>
         </li>
-        <li className="cursor-pointer text-tertiary hover:text-white sm:mr-10">
+        <li className="cursor-pointer text-tertiary transition-colors hover:text-white sm:mr-10">
           <button onClick={() => scrollToId('skills')}>Skills</button>
         </li>
-        <li className="cursor-pointer text-tertiary hover:text-white sm:mr-auto">
+        <li className="cursor-pointer text-tertiary transition-colors hover:text-white sm:mr-auto">
           <button onClick={() => scrollToId('passion-projects')}>
             Passion projects
           </button>
         </li>
 
-        <li className="cursor-pointer rounded-sm bg-white px-2 py-1 font-bold text-primary-200 shadow hover:bg-primary-200 hover:text-white">
+        <li className="cursor-pointer rounded-sm bg-white px-2 py-1 font-bold text-primary-200 shadow transition-colors hover:bg-primary-200 hover:text-white">
           <button>Resume</button>
         </li>
       </ul>

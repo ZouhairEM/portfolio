@@ -3,52 +3,31 @@ import Image from 'next/image';
 import Layout from '@/components/Layout';
 import LearnedSkill from '@/components/LearnedSkill';
 import ProjectBio from '@/components/ProjectBio';
+import { useEffect, useState } from 'react';
+import { Content } from '@/types/content';
+import Link from 'next/link';
 
 export default function Home() {
-  const project = [
-    {
-      title: 'Monitoring App',
-      thumbnail: '/../public/monitoring.png',
-      tech: 'React.JS, Tailwind CSS',
-      repo: '',
-      demo: 'https://zouhairem.github.io/monitoring',
-    },
-    {
-      title: 'CMS Portfolio',
-      thumbnail: '/../public/tv_shows_app.png',
-      tech: 'CMS, SSG, Testing',
-      repo: '',
-      demo: null,
-    },
-    {
-      title: 'Pokédex',
-      thumbnail: '/../public/pokemon_project.png',
-      tech: 'React.JS, Bootstrap',
-      repo: '',
-      demo: 'https://zouhairem.github.io/pokemon/',
-    },
-    {
-      title: 'TV Shows App',
-      thumbnail: '/../public/tv_shows_app.png',
-      tech: 'Vue 2, Bootstrap, Testing',
-      repo: '',
-      demo: 'https://zouhairem.github.io/tvpoc/',
-    },
-  ];
+  const [content, setContent] = useState<Content | null>(null);
 
-  const skills = [
-    ['HTML', '/../public/skills/html5.png', 'HTML5 logo'],
-    ['CSS', '/../public/skills/css3.png', 'CSS3 logo'],
-    ['Javascript', '/../public/skills/js.png', 'Javascript logo'],
-    ['Typescript', '/../public/skills/typescript.png', 'Typescript logo'],
-    ['React.JS', '/../public/skills/reactjs.png', 'React.JS logo'],
-    ['Next.JS', '/../public/skills/next.png', 'Next.JS logo'],
-    ['Vue.JS', '/../public/skills/vuejs.png', 'Vue.JS logo'],
-    ['Angular 2', '/../public/skills/angular2.png', 'Angular 2 logo'],
-    ['RxJS', '/../public/skills/rxjs.png', 'RxJS logo'],
-    ['Tailwind CSS', '/../public/skills/tailwind.png', 'Tailwind CSS logo'],
-    ['Testing', '/../public/skills/testing.png', 'Cypress logo'],
-  ];
+  useEffect(() => {
+    const getContent = async () => {
+      try {
+        const query = await fetch('http://localhost:5000/content');
+        if (!query.ok) {
+          throw new Error('Failed to fetch data from the server.');
+        }
+        const data = await query.json();
+        setContent(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        setContent(null);
+      }
+    };
+    getContent();
+  }, []);
+
+  const { aboutMe, projects = [], skills = [] } = content ?? {};
 
   return (
     <Layout>
@@ -72,17 +51,10 @@ export default function Home() {
             className="col-span-12 flex flex-col lg:col-span-6"
           >
             <h2 className="mb-2">About me</h2>
-            <div className="flex flex-col gap-2">
-              <p>
-                I've been working since 2021 and before that I was an eager
-                student learning frontend development at Fontys University,
-                graduating with a Bachelor of Engineering degree.
-              </p>
-              <p>
-                In my day to day life I like to work out to stay fit mentally,
-                join hackatons to keep my skills sharp and watch anime to relax.
-              </p>
-            </div>
+            <div
+              className="flex flex-col gap-2"
+              dangerouslySetInnerHTML={{ __html: aboutMe ?? '' }}
+            />
           </section>
           <section id="skills" className="col-span-12 lg:col-span-6">
             <h2 className="mb-2">Skills</h2>
@@ -96,8 +68,21 @@ export default function Home() {
         <section id="passion-projects" className="my-40">
           <h2 className="mb-4">Passion projects</h2>
           <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {project.map((project, i) => (
-              <ProjectBio project={project} key={i} />
+            {projects.map((project, i) => (
+              <Link
+                href={{
+                  pathname: '/project_details',
+                  query: {
+                    title: JSON.stringify(project.title),
+                    details: JSON.stringify(project.details),
+                    demo: JSON.stringify(project.demo),
+                    repo: JSON.stringify(project.repo),
+                  },
+                }}
+                key={i}
+              >
+                <ProjectBio project={project} />
+              </Link>
             ))}
           </div>
         </section>
