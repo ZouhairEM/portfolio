@@ -14,5 +14,6 @@ export interface Project {
     cover: string;
     description: string;
     features: string[];
+    tech: string[];
   };
 }

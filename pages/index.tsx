@@ -31,10 +31,10 @@ export default function Home() {
 
   return (
     <Layout>
-      <main className="container flex min-h-screen flex-col items-center justify-between">
+      <main className="container mb-0 flex min-h-screen flex-col items-center justify-between p-6 sm:mb-40 sm:p-0">
         <section
           id="bio"
-          className="flex min-h-screen w-full flex-col items-center justify-between md:flex-row"
+          className="flex min-h-screen w-full flex-col items-center justify-center sm:flex-row sm:justify-between "
         >
           <BioBlock />
           <Image
@@ -45,47 +45,61 @@ export default function Home() {
             alt="Zouhair El-Mariami"
           />
         </section>
-        <div className="grid grid-cols-12 gap-14 lg:gap-10">
-          <section
-            id="about"
-            className="col-span-12 flex flex-col lg:col-span-6"
-          >
-            <h2 className="mb-2">About me</h2>
-            <div
-              className="flex flex-col gap-2"
-              dangerouslySetInnerHTML={{ __html: aboutMe ?? '' }}
-            />
-          </section>
-          <section id="skills" className="col-span-12 lg:col-span-6">
-            <h2 className="mb-2">Skills</h2>
-            <ul className="flex flex-wrap gap-2 rounded shadow-2xl">
-              {skills.map(([skill, img, alt]) => (
-                <LearnedSkill key={skill} skill={skill} img={img} alt={alt} />
-              ))}
-            </ul>
-          </section>
-        </div>
-        <section id="passion-projects" className="my-40">
-          <h2 className="mb-4">Passion projects</h2>
-          <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {projects.map((project, i) => (
-              <Link
-                href={{
-                  pathname: '/project_details',
-                  query: {
-                    title: JSON.stringify(project.title),
-                    details: JSON.stringify(project.details),
-                    demo: JSON.stringify(project.demo),
-                    repo: JSON.stringify(project.repo),
-                  },
-                }}
-                key={i}
+        {content && (
+          <>
+            <div className="grid w-full grid-cols-3 gap-0 text-center sm:grid-cols-12 sm:gap-14 sm:text-left lg:gap-10">
+              <section
+                id="about"
+                className="col-span-12 flex flex-col sm:col-span-6"
               >
-                <ProjectBio project={project} />
-              </Link>
-            ))}
-          </div>
-        </section>
+                <h2 className="mb-2">About me</h2>
+                <div
+                  className="flex flex-col gap-2"
+                  dangerouslySetInnerHTML={{ __html: aboutMe ?? '' }}
+                />
+              </section>
+              <section
+                id="skills"
+                className="col-span-12 my-40 sm:col-span-6 sm:my-0"
+              >
+                <h2 className="mb-2">Skills</h2>
+                <ul className="flex flex-wrap justify-center gap-2 rounded shadow-2xl sm:justify-normal">
+                  {skills.map(([skill, img, alt]) => (
+                    <LearnedSkill
+                      key={skill}
+                      skill={skill}
+                      img={img}
+                      alt={alt}
+                    />
+                  ))}
+                </ul>
+              </section>
+            </div>
+            <section id="passion-projects" className="mb-40 sm:my-40 sm:mb-0">
+              <h2 className="mb-4 text-center sm:text-left">
+                Passion projects
+              </h2>
+              <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                {projects.map((project, i) => (
+                  <Link
+                    href={{
+                      pathname: '/project_details',
+                      query: {
+                        title: JSON.stringify(project.title),
+                        details: JSON.stringify(project.details),
+                        demo: JSON.stringify(project.demo),
+                        repo: JSON.stringify(project.repo),
+                      },
+                    }}
+                    key={i}
+                  >
+                    <ProjectBio project={project} />
+                  </Link>
+                ))}
+              </div>
+            </section>
+          </>
+        )}
       </main>
     </Layout>
   );

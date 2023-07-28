@@ -1,6 +1,6 @@
 {
     "content": {
-        "aboutMe": "<p>I've been working since 2021 and before that I was an eager student learning frontend development at Fontys University, graduating with a Bachelor of Engineering degree.</p><p>In my day to day life I like to work out to stay fit mentally, join hackathons to keep my skills sharp, and watch anime to relax.</p>",
+        "aboutMe": "<p>Working professionally since 2021 and before that I was an eager student learning frontend development at Fontys University, graduating with a Bachelor of Engineering degree.</p><p>In my day to day life I like to work out to stay fit mentally, join coding events to keep my skills sharp and watch anime to relax.</p>",
         "projects": [
             {
                 "title": "Monitoring App",
@@ -14,7 +14,7 @@
                 "demo": "https://zouhairem.github.io/monitoring",
                 "details": {
                     "cover": "/monitoring_app.png",
-                    "description": "My most proud passion project. An app made to simulate monitoring patient activity for nurses. I wanted to an app as close to an enterprise level app that I could make to gain a better understanding of React.JS, Typescript, design and code structure.",
+                    "description": "My most proud passion project. An app made to simulate monitoring patient activity for nurses. I wanted to build an app as close to enterprise level that I could make to improve my understanding of React.JS, Typescript, design and code structure.",
                     "features": [
                         "Zustand for state management",
                         "i18Next for translations",
@@ -22,7 +22,12 @@
                         "Tailwind CSS"
                     ],
                     "repo": "https://github.com/ZouhairEM/monitoring/",
-                    "demo": "https://zouhairem.github.io/monitoring"
+                    "demo": "https://zouhairem.github.io/monitoring",
+                    "tech": [
+                        "React.JS",
+                        "Typescript",
+                        "Tailwind CSS"
+                    ]
                 }
             },
             {
@@ -31,13 +36,13 @@
                 "tech": [
                     "Next.JS",
                     "SSG",
-                    "CMS",
-                    "Testing"
+                    "Testing",
+                    "Headless CMS"
                 ],
                 "repo": "https://github.com/ZouhairEM/portfolio/",
                 "demo": null,
                 "details": {
-                    "cover": "/monitoring_app.png",
+                    "cover": null,
                     "description": "My portfolio built in Next.JS. The content is statically generated with SSG using Netlify's open source CMS. This portfolio is a revamp/upgrade on what I created in 2022 with Nuxt. The reason for this change is because I wanted to learn Next.JS instead and had envisioned more features.",
                     "features": [
                         "Dynamic content with Netlify CMS",
@@ -47,7 +52,13 @@
                         "Tailwind CSS"
                     ],
                     "repo": "https://github.com/ZouhairEM/portfolio/",
-                    "demo": null
+                    "demo": null,
+                    "tech": [
+                        "Next.JS",
+                        "SSG",
+                        "Testing",
+                        "Headless CMS"
+                    ]
                 }
             },
             {
@@ -69,7 +80,12 @@
                         "Bootstrap"
                     ],
                     "repo": "https://github.com/ZouhairEM/pokemon/",
-                    "demo": "https://zouhairem.github.io/pokemon/" 
+                    "demo": "https://zouhairem.github.io/pokemon/",
+                    "tech": [
+                        "React.JS",
+                        "Typescript",
+                        "Bootstrap"
+                    ]
                 }
             },
             {
@@ -92,7 +108,12 @@
                         "Bootstrap"
                     ],
                     "repo": "https://github.com/ZouhairEM/tvpoc/",
-                    "demo": "https://zouhairem.github.io/tvpoc/"
+                    "demo": "https://zouhairem.github.io/tvpoc/",
+                    "tech": [
+                        "Vue",
+                        "Bootstrap",
+                        "Testing"
+                    ]
                 }
             }
         ],

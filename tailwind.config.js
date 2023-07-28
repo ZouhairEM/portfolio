@@ -12,7 +12,7 @@ module.exports = {
         sm: '400px',
         md: '600px',
         lg: '700px',
-        xl: '900px',
+        xl: '950px',
       },
     },
     colors: {
@@ -23,7 +23,7 @@ module.exports = {
       secondary: '#4196c2',
       tertiary: 'rgba(65, 150, 194, 0.9)',
       white: '#f3e4e4',
-      muted: 'hsl(214, 15%, 81%)',
+      muted: 'hsl(214, 15%, 91%)',
     },
   },
   plugins: [],
