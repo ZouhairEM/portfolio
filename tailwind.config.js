@@ -25,6 +25,9 @@ module.exports = {
       white: '#f3e4e4',
       muted: 'hsl(214, 15%, 91%)',
     },
+    listStyleType: {
+      circle: 'circle'
+    }
   },
   plugins: [],
 };

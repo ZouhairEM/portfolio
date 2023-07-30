@@ -14,12 +14,24 @@
                 "demo": "https://zouhairem.github.io/monitoring",
                 "details": {
                     "cover": "/monitoring_app.png",
-                    "description": "My most proud passion project. An app made to simulate monitoring patient activity for nurses. I wanted to build an app as close to enterprise level that I could make to improve my understanding of React.JS, Typescript, design and code structure.",
+                    "description": "An app made to simulate the monitoring of patient activity for nurses. That's the premise, but it was merely built for fun. This helped me improve my understanding on how to structure a medium scale application using modern technologies.",
                     "features": [
-                        "Zustand for state management",
-                        "i18Next for translations",
-                        "Customization features including dark mode, color palette and font size.",
-                        "Tailwind CSS"
+                        {
+                            "title": "Zustand for global state management",
+                            "icon": "/../public/features/i18next.png"
+                        },
+                        {
+                            "title": "i18Next for translations",
+                            "icon": "/../public/features/i18next.png"
+                        },
+                        {
+                            "title": "Live generation of random new alarms which updates UI across the app",
+                            "icon": null
+                        },
+                        {
+                            "title": "Customization features including dark mode, color palette and font size",
+                            "icon": null
+                        }
                     ],
                     "repo": "https://github.com/ZouhairEM/monitoring/",
                     "demo": "https://zouhairem.github.io/monitoring",
@@ -31,7 +43,7 @@
                 }
             },
             {
-                "title": "CMS Portfolio",
+                "title": "Headless CMS",
                 "thumbnail": "/../public/monitoring.png",
                 "tech": [
                     "Next.JS",
@@ -45,11 +57,26 @@
                     "cover": null,
                     "description": "My portfolio built in Next.JS. The content is statically generated with SSG using Netlify's open source CMS. This portfolio is a revamp/upgrade on what I created in 2022 with Nuxt. The reason for this change is because I wanted to learn Next.JS instead and had envisioned more features.",
                     "features": [
-                        "Dynamic content with Netlify CMS",
-                        "Next.JS's Static Generation",
-                        "JSON Server for local setup",
-                        "Unit and E2E testing",
-                        "Tailwind CSS"
+                        {
+                            "title": "Dynamic content with Netlify CMS",
+                            "icon": null
+                        },
+                        {
+                            "title": "Next.JS's Static Generation",
+                            "icon": null
+                        },
+                        {
+                            "title": "JSON Server for local setup",
+                            "icon": null
+                        },
+                        {
+                            "title": "Unit testing",
+                            "icon": null
+                        },
+                        {
+                            "title": "Tailwind CSS",
+                            "icon": null
+                        }
                     ],
                     "repo": "https://github.com/ZouhairEM/portfolio/",
                     "demo": null,
@@ -75,9 +102,18 @@
                     "cover": "/pokemon_project.png",
                     "description": "Pokemon - Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, deleniti. Sequi ipsam molestias corrupti? Velit sequi autem, molestias doloribus laborum dicta, ut quis, quibusdam itaque ipsa id provident consequuntur in.",
                     "features": [
-                        "React Router",
-                        "Typescript",
-                        "Bootstrap"
+                        {
+                            "title": "React Router",
+                            "icon": null
+                        },
+                        {
+                            "title": "Typescript",
+                            "icon": null
+                        },
+                        {
+                            "title": "Bootstrap",
+                            "icon": null
+                        }
                     ],
                     "repo": "https://github.com/ZouhairEM/pokemon/",
                     "demo": "https://zouhairem.github.io/pokemon/",
@@ -102,10 +138,22 @@
                     "cover": "/tv_shows_app.png",
                     "description": "TV App - Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, deleniti. Sequi ipsam molestias corrupti? Velit sequi autem, molestias doloribus laborum dicta, ut quis, quibusdam itaque ipsa id provident consequuntur in.",
                     "features": [
-                        "Vue 2",
-                        "Vue Router",
-                        "Unit Testing with Vue Utils",
-                        "Bootstrap"
+                        {
+                            "title": "Vue 2",
+                            "icon": null
+                        },
+                        {
+                            "title": "Vue Router",
+                            "icon": null
+                        },
+                        {
+                            "title": "Unit testing with Vue Utils",
+                            "icon": null
+                        },
+                        {
+                            "title": "Bootstrap",
+                            "icon": null
+                        }
                     ],
                     "repo": "https://github.com/ZouhairEM/tvpoc/",
                     "demo": "https://zouhairem.github.io/tvpoc/",
@@ -120,7 +168,7 @@
         "skills": [
             [
                 "HTML",
-                "/../public/skills/html5.png",
+                "/../public/skills/html.svg",
                 "HTML5 logo"
             ],
             [

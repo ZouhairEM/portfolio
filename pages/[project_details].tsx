@@ -42,28 +42,7 @@ export default function ProjectDetails() {
           </button>
         </section>
 
-        <hr className="mb-4 mt-4 opacity-60 sm:mt-10" />
-
-        <section>
-          <div className="flex w-full gap-2">
-            <a
-              href={repo}
-              target="_blank"
-              className="flex gap-2 rounded p-2 text-white transition-colors hover:text-tertiary"
-            >
-              <Github width={20} /> Source Code
-            </a>
-            {demo && (
-              <a
-                href={demo ?? ''}
-                target="_blank"
-                className="flex gap-2 rounded p-2 text-white transition-colors hover:text-tertiary"
-              >
-                <ExternalLink width={20} /> Live
-              </a>
-            )}
-          </div>
-        </section>
+        <hr className="border-t-1 mb-4 mt-4 border text-secondary opacity-60 sm:mt-10" />
 
         <section>
           <h2 className="text-center sm:text-left">{title}</h2>
@@ -90,14 +69,46 @@ export default function ProjectDetails() {
           <p>{projectDetails.description}</p>
         </section>
 
-        <hr className="my-4 opacity-60 sm:my-10" />
+        <section>
+          <div className="flex w-full gap-2">
+            <a
+              href={repo}
+              target="_blank"
+              className="flex gap-2 rounded p-2 text-white transition-colors hover:text-tertiary"
+            >
+              <Github width={20} /> Github
+            </a>
+            {demo && (
+              <a
+                href={demo ?? ''}
+                target="_blank"
+                className="flex gap-2 rounded p-2 text-white transition-colors hover:text-tertiary"
+              >
+                <ExternalLink width={20} /> Live
+              </a>
+            )}
+          </div>
+        </section>
+
+        <hr className="border-t-1 mb-4 mt-4 border text-secondary opacity-60 sm:mt-10" />
 
         <section>
           <h3 className="text-center sm:text-left">Features</h3>
-          <ul className="list-disc p-4">
+          <ul className="list-circle p-4">
             {projectDetails.features.map((feature) => (
-              <li key={feature} className="muted">
-                {feature}
+              <li key={feature.title} className="muted py-1">
+                <p className="flex items-center gap-2">
+                  {feature.icon && (
+                    <Image
+                      src={feature.icon}
+                      width={20}
+                      height={20}
+                      className="col-span-2 rounded-sm opacity-90 shadow-2xl"
+                      alt={feature.title}
+                    />
+                  )}{' '}
+                  {feature.title}
+                </p>
               </li>
             ))}
           </ul>

@@ -16,6 +16,9 @@
   }
 }
 
+* {
+  /* outline: solid 0.1px; */
+}
 body {
   color: rgb(var(--foreground-rgb));
   background: #011627;

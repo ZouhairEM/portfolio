@@ -13,7 +13,10 @@ export interface Project {
   details: {
     cover: string;
     description: string;
-    features: string[];
+    features: {
+      title: string;
+      icon: string | null;
+    }[];
     tech: string[];
   };
 }

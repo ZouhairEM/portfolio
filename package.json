@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "serve": "json-server --watch content.json --port 5000"
+    "serve": "json-server --watch content.json --port 5000",
+    "test": "jest",
+    "coverage": "jest --coverage"
   },
   "dependencies": {
     "@types/node": "20.3.3",
@@ -29,6 +31,10 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
-    "@svgr/webpack": "^8.0.1"
+    "@svgr/webpack": "^8.0.1",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^14.0.0",
+    "jest": "^29.6.2",
+    "jest-environment-jsdom": "^29.6.2"
   }
 }

@@ -25,7 +25,7 @@ function ProjectBio({ project }: ProjectBioProps) {
       {project.thumbnail && (
         <Image
           src={project.thumbnail}
-          alt={project.thumbnail}
+          alt={project.title}
           width={200}
           height={200}
           className="w-full rounded-sm bg-white object-contain opacity-90 sm:h-full"
@@ -41,31 +41,6 @@ function ProjectBio({ project }: ProjectBioProps) {
             {t}
           </p>
         ))}
-      </div>
-
-      <div className="flex w-full flex-col justify-between">
-        <div className="mt-6 flex gap-2">
-          <span
-            className="rounded p-2 text-white transition-colors hover:text-tertiary"
-            role="button"
-            onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
-              handleClick(e, project.repo)
-            }
-          >
-            <Github width={20} />
-          </span>
-          {project.demo && (
-            <span
-              className="rounded p-2 text-white transition-colors hover:text-tertiary"
-              role="button"
-              onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
-                handleClick(e, project.demo ?? '')
-              }
-            >
-              <ExternalLink width={20} />
-            </span>
-          )}
-        </div>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 function BioBlock() {
   return (
-    <div className="text-center sm:text-left">
+    <div className="text-center sm:text-left" role="Author info">
       <h5>Hello, I'm</h5>
       <h1>Zouhair</h1>
       <h2>El-Mariami</h2>
