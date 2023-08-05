@@ -16,20 +16,17 @@
   }
 }
 
-* {
-  /* outline: solid 0.1px; */
-}
 body {
   color: rgb(var(--foreground-rgb));
   background: #011627;
 }
 
 h1 {
-  @apply border-tertiary text-6xl font-bold text-white;
+  @apply border-tertiary text-8xl font-bold text-white;
 }
 
 h2 {
-  @apply text-4xl font-bold text-white;
+  @apply text-6xl font-bold text-white;
 }
 h3 {
   @apply text-2xl font-medium text-white;

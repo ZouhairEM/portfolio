@@ -17,6 +17,8 @@ export interface Project {
       title: string;
       icon: string | null;
     }[];
+    demo: string | null;
+    repo: string;
     tech: string[];
   };
 }

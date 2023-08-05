@@ -64,7 +64,9 @@ function NavBar() {
           </li>
 
           <li className="my-2 cursor-pointer rounded-sm bg-white px-2 py-1 font-bold text-primary-200 shadow transition-colors hover:bg-primary-200 hover:text-white">
-            Resume
+            <a href="CV_Zouhair_El-Mariami.pdf" target="_blank">
+              Resume
+            </a>
           </li>
         </ul>
       </nav>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import ProjectDetails from '@/pages/[project_details]';
 
@@ -23,19 +23,17 @@ describe('ProjectDetails component', () => {
             icon: '/feature2_icon.png',
           },
         ],
+        demo: 'https://project1demo.co',
+        repo: 'https://project1repo.co',
       }),
-      demo: '"https://project1demo.co"',
-      repo: '"https://project1repo.co"',
     };
 
-    const { title, details, demo, repo } = mockQueryData;
+    const { title, details } = mockQueryData;
 
     useRouter.mockImplementation(() => ({
       query: {
         title: title,
         details,
-        demo: demo,
-        repo: repo,
       },
     }));
 

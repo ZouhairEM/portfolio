@@ -1,5 +1,4 @@
 import { Github, LinkedinIcon, Mail } from 'lucide-react';
-
 const currentYear = new Date().getFullYear();
 
 function FooterNav() {

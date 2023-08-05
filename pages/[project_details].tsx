@@ -13,16 +13,6 @@ export default function ProjectDetails() {
       ? JSON.parse(router.query.title)
       : '';
 
-  const demo =
-    typeof router.query.demo === 'string'
-      ? JSON.parse(router.query.demo)
-      : null;
-
-  const repo =
-    typeof router.query.repo === 'string'
-      ? JSON.parse(router.query.repo)
-      : null;
-
   const detailsString = Array.isArray(details) ? details[0] : details;
   const projectDetails: Project['details'] = detailsString
     ? JSON.parse(detailsString)
@@ -42,7 +32,7 @@ export default function ProjectDetails() {
           </button>
         </section>
 
-        <hr className="border-t-1 mb-4 mt-4 border text-secondary opacity-60 sm:mt-10" />
+        <hr className="border-t-1 mb-4 mt-4 border text-secondary opacity-60" />
 
         <section>
           <h2 className="text-center sm:text-left">{title}</h2>
@@ -59,7 +49,7 @@ export default function ProjectDetails() {
           <div className="tech mt-2 flex h-16 flex-wrap gap-2">
             {projectDetails.tech.map((t) => (
               <p
-                className="h-1/2 rounded-md border border-secondary border-opacity-20 bg-primary-100 p-2 text-xs group-hover:border-primary-100 group-hover:border-opacity-0 group-hover:bg-opacity-0"
+                className="h-1/2 rounded-md border border-secondary border-opacity-60 bg-primary-100 p-2 text-xs group-hover:border-primary-100 group-hover:border-opacity-0 group-hover:bg-opacity-0"
                 key={t}
               >
                 {t}
@@ -72,15 +62,15 @@ export default function ProjectDetails() {
         <section>
           <div className="flex w-full gap-2">
             <a
-              href={repo}
+              href={projectDetails.repo}
               target="_blank"
               className="flex gap-2 rounded p-2 text-white transition-colors hover:text-tertiary"
             >
               <Github width={20} /> Github
             </a>
-            {demo && (
+            {projectDetails.demo && (
               <a
-                href={demo ?? ''}
+                href={projectDetails.demo ?? ''}
                 target="_blank"
                 className="flex gap-2 rounded p-2 text-white transition-colors hover:text-tertiary"
               >
@@ -90,7 +80,7 @@ export default function ProjectDetails() {
           </div>
         </section>
 
-        <hr className="border-t-1 mb-4 mt-4 border text-secondary opacity-60 sm:mt-10" />
+        <hr className="border-t-1 mb-4 mt-4 border text-secondary opacity-60" />
 
         <section>
           <h3 className="text-center sm:text-left">Features</h3>

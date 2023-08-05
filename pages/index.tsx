@@ -52,7 +52,7 @@ export default function Home() {
                 id="about"
                 className="col-span-12 flex flex-col sm:col-span-6"
               >
-                <h2 className="mb-2">About me</h2>
+                <h3 className="mb-2">About me</h3>
                 <div
                   className="flex flex-col gap-2"
                   dangerouslySetInnerHTML={{ __html: aboutMe ?? '' }}
@@ -62,7 +62,7 @@ export default function Home() {
                 id="skills"
                 className="col-span-12 my-40 sm:col-span-6 sm:my-0"
               >
-                <h2 className="mb-2">Skills</h2>
+                <h3 className="mb-2">Skills</h3>
                 <ul className="flex flex-wrap justify-center gap-2 rounded shadow-2xl sm:justify-normal">
                   {skills.map(([skill, img, alt]) => (
                     <LearnedSkill
@@ -76,9 +76,9 @@ export default function Home() {
               </section>
             </div>
             <section id="passion-projects" className="mb-40 sm:my-40 sm:mb-0">
-              <h2 className="mb-4 text-center sm:text-left">
+              <h3 className="mb-4 text-center sm:text-left">
                 Passion projects
-              </h2>
+              </h3>
               <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {projects.map((project, i) => (
                   <Link

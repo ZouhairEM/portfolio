@@ -4,32 +4,30 @@
         "projects": [
             {
                 "title": "Monitoring App",
-                "thumbnail": "/../public/monitoring.png",
+                "thumbnail": "/../public/monitoring.jpg",
                 "tech": [
                     "React.JS",
                     "Typescript",
                     "Tailwind CSS"
                 ],
-                "repo": "https://github.com/ZouhairEM/monitoring/",
-                "demo": "https://zouhairem.github.io/monitoring",
                 "details": {
                     "cover": "/monitoring_app.png",
-                    "description": "An app made to simulate the monitoring of patient activity for nurses. That's the premise, but it was merely built for fun. This helped me improve my understanding on how to structure a medium scale application using modern technologies.",
+                    "description": "An app made to simulate the monitoring of patient activity. That's the idea, but it was only built for fun. This helped me improve my understanding on structuring a small-to-medium scale application.",
                     "features": [
                         {
-                            "title": "Zustand for global state management",
-                            "icon": "/../public/features/i18next.png"
+                            "title": "Zustand library for state management",
+                            "icon": "/features/zustand.svg"
                         },
                         {
-                            "title": "i18Next for translations",
-                            "icon": "/../public/features/i18next.png"
+                            "title": "i18Next for internationalization",
+                            "icon": "/features/i18next.svg"
                         },
                         {
-                            "title": "Live generation of random new alarms which updates UI across the app",
+                            "title": "Live generation of random alarms that update UI",
                             "icon": null
                         },
                         {
-                            "title": "Customization features including dark mode, color palette and font size",
+                            "title": "Customization including dark mode color palette and font size",
                             "icon": null
                         }
                     ],
@@ -44,74 +42,70 @@
             },
             {
                 "title": "Headless CMS",
-                "thumbnail": "/../public/monitoring.png",
+                "thumbnail": "/../public/cms.jpg",
                 "tech": [
+                    "Headless CMS",
                     "Next.JS",
                     "SSG",
-                    "Testing",
-                    "Headless CMS"
+                    "Jest"
                 ],
-                "repo": "https://github.com/ZouhairEM/portfolio/",
-                "demo": null,
                 "details": {
                     "cover": null,
-                    "description": "My portfolio built in Next.JS. The content is statically generated with SSG using Netlify's open source CMS. This portfolio is a revamp/upgrade on what I created in 2022 with Nuxt. The reason for this change is because I wanted to learn Next.JS instead and had envisioned more features.",
+                    "description": "This portfolio was built as a headless CMS with Next.JS. Most content is statically generated using Strapi CMS, including this text right here. It's a revamp/upgrade of a previous portfolio made with Nuxt.JS and Netfliy CMS. I made this change to keep learning and improving and make it easier for myself to update my portfolio.",
                     "features": [
                         {
-                            "title": "Dynamic content with Netlify CMS",
-                            "icon": null
+                            "title": "Dynamic content with Strapi CMS and SSG",
+                            "icon": "/features/strapi.svg"
                         },
                         {
-                            "title": "Next.JS's Static Generation",
-                            "icon": null
+                            "title": "Next.JS",
+                            "icon": "/features/next.svg"
                         },
                         {
-                            "title": "JSON Server for local setup",
-                            "icon": null
+                            "title": "Jest and git hooks to run unit tests for pre-commits.",
+                            "icon": "/features/testing.svg"
                         },
                         {
-                            "title": "Unit testing",
-                            "icon": null
-                        },
-                        {
-                            "title": "Tailwind CSS",
+                            "title": "JSON Server for local development",
                             "icon": null
                         }
                     ],
                     "repo": "https://github.com/ZouhairEM/portfolio/",
                     "demo": null,
                     "tech": [
+                        "Strapi CMS",
                         "Next.JS",
                         "SSG",
-                        "Testing",
-                        "Headless CMS"
+                        "Testing"
                     ]
                 }
             },
             {
                 "title": "Pokédex",
-                "thumbnail": "/../public/monitoring.png",
+                "thumbnail": "/../public/pokedex.jpg",
                 "tech": [
                     "React.JS",
                     "Typescript",
                     "Bootstrap"
                 ],
-                "repo": "https://github.com/ZouhairEM/pokemon/",
-                "demo": "https://zouhairem.github.io/pokemon/",
                 "details": {
                     "cover": "/pokemon_project.png",
-                    "description": "Pokemon - Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, deleniti. Sequi ipsam molestias corrupti? Velit sequi autem, molestias doloribus laborum dicta, ut quis, quibusdam itaque ipsa id provident consequuntur in.",
+                    "description": "My first project in React.JS created with a Pokémon dataset. There are three pages, an overview of the first generation of Pokémon, a details page for each Pokémon and a 404 page.",
                     "features": [
                         {
                             "title": "React Router",
-                            "icon": null
+                            "icon": "/features/react_router.svg"
                         },
                         {
                             "title": "Typescript",
-                            "icon": null
+                            "icon": "/features/typescript.svg"
                         },
                         {
                             "title": "Bootstrap",
+                            "icon": "/features/bootstrap.svg"
+                        },
+                        {
+                            "title": "Search and filter through 151 Pokémon",
                             "icon": null
                         }
                     ],
@@ -126,32 +120,30 @@
             },
             {
                 "title": "TV Shows App",
-                "thumbnail": "/../public/monitoring.png",
+                "thumbnail": "/../public/tvapp.jpg",
                 "tech": [
                     "Vue",
                     "Bootstrap",
                     "Testing"
                 ],
-                "repo": "",
-                "demo": "https://zouhairem.github.io/tvpoc/",
                 "details": {
-                    "cover": "/tv_shows_app.png",
-                    "description": "TV App - Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, deleniti. Sequi ipsam molestias corrupti? Velit sequi autem, molestias doloribus laborum dicta, ut quis, quibusdam itaque ipsa id provident consequuntur in.",
+                    "cover": "/tvapp.jpg",
+                    "description": "An app fetching data about TV shows from the TVMaze API, with which the top rated TV shows are displayed that you can also filter and sort through.",
                     "features": [
                         {
                             "title": "Vue 2",
-                            "icon": null
-                        },
-                        {
-                            "title": "Vue Router",
-                            "icon": null
+                            "icon": "/features/vuejs.svg"
                         },
                         {
                             "title": "Unit testing with Vue Utils",
-                            "icon": null
+                            "icon": "/features/testing.svg"
                         },
                         {
                             "title": "Bootstrap",
+                            "icon": "/features/bootstrap.svg"
+                        },
+                        {
+                            "title": "Search and filter through 100+ TV shows",
                             "icon": null
                         }
                     ],
@@ -168,57 +160,57 @@
         "skills": [
             [
                 "HTML",
-                "/../public/skills/html.svg",
+                "/skills/html5.svg",
                 "HTML5 logo"
             ],
             [
                 "CSS",
-                "/../public/skills/css3.png",
+                "/skills/css3.svg",
                 "CSS3 logo"
             ],
             [
                 "Javascript",
-                "/../public/skills/js.png",
+                "/skills/javascript.svg",
                 "Javascript logo"
             ],
             [
                 "Typescript",
-                "/../public/skills/typescript.png",
+                "/skills/typescript.svg",
                 "Typescript logo"
             ],
             [
                 "React.JS",
-                "/../public/skills/reactjs.png",
+                "/skills/reactjs.svg",
                 "React.JS logo"
             ],
             [
                 "Next.JS",
-                "/../public/skills/next.png",
+                "/skills/next.svg",
                 "Next.JS logo"
             ],
             [
                 "Vue.JS",
-                "/../public/skills/vuejs.png",
+                "/skills/vuejs.svg",
                 "Vue.JS logo"
             ],
             [
                 "RxJS",
-                "/../public/skills/rxjs.png",
+                "/skills/rxjs.svg",
                 "RxJS logo"
             ],
             [
                 "Nx",
-                "/../public/skills/nx.png",
+                "/skills/nx.svg",
                 "Nx logo"
             ],
             [
                 "Tailwind CSS",
-                "/../public/skills/tailwind.png",
+                "/skills/tailwind.svg",
                 "Tailwind CSS logo"
             ],
             [
                 "Testing",
-                "/../public/skills/testing.png",
+                "/skills/testing.svg",
                 "Cypress logo"
             ]
         ]
