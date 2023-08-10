@@ -51,10 +51,10 @@
                 ],
                 "details": {
                     "cover": null,
-                    "description": "This portfolio was built as a headless CMS with Next.JS. Most content is statically generated using Strapi CMS, including this text right here. It's a revamp/upgrade of a previous portfolio made with Nuxt.JS and Netfliy CMS. I made this change to keep learning and improving and make it easier for myself to update my portfolio.",
+                    "description": "This portfolio was built as a headless CMS with Next.JS. Most content is statically generated using Netlify CMS, including this text right here. It's a revamp/upgrade of a previous portfolio made with Nuxt.JS and Netfliy CMS. I made this change to keep learning and improving and make it easier for myself to update my portfolio.",
                     "features": [
                         {
-                            "title": "Dynamic content with Strapi CMS and SSG",
+                            "title": "Dynamic content with Netlify CMS and SSG",
                             "icon": "/features/strapi.svg"
                         },
                         {
@@ -73,7 +73,7 @@
                     "repo": "https://github.com/ZouhairEM/portfolio/",
                     "demo": null,
                     "tech": [
-                        "Strapi CMS",
+                        "Netlify CMS",
                         "Next.JS",
                         "SSG",
                         "Testing"

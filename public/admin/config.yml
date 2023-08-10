@@ -1,0 +1,71 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+
+media_folder: static/images
+public_folder: /images
+
+collections:
+  - name: 'resume'
+    label: 'Resume'
+    folder: 'content/resume'
+    format: 'frontmatter'
+    create: true
+    editor:
+      preview: false
+    widget: "text"
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "about"}
+      - {label: "About", name: "about", widget: "string"}
+      - {label: "Document", name: "document", widget: "string"}
+  - name: 'about'
+    label: 'About'
+    folder: 'content/about'
+    format: 'frontmatter'
+    create: true
+    editor:
+      preview: false
+    widget: "select"      
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "about"}
+      - {label: "About", name: "About", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: 'skills'
+    label: 'Skills'
+    folder: 'content/skill'
+    format: 'frontmatter'
+    create: true
+    editor:
+      preview: false
+    widget: "select"      
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "skill"}
+      - {label: "Skill", name: "Skill", widget: "string"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image"}
+  - name: 'projects'
+    label: 'Work'
+    folder: 'content/projects'
+    format: 'frontmatter'
+    create: true
+    editor:
+      preview: false
+    widget: "select"      
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "project"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image"}
+      - {label: "Tech stack", name: "tech", widget: "string"}
+      - {label: "Repo", name: "repo", widget: "string"}
+      - {label: "Demo", name: "demo", widget: "string"}
+  - name: 'footer'
+    label: 'Footer Contact'
+    folder: 'content/footer'
+    format: 'frontmatter'
+    create: true
+    editor:
+      preview: false
+    widget: "select"      
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "footer"}
+      - {label: "Contact", name: "contact", widget: "string"}
+      - {label: "Icon", name: "thumbnail", widget: "image"}      
