@@ -54,24 +54,7 @@ collections:
       - {label: "Layout", name: "layout", widget: "hidden", default: "project"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
-      - {label: "Tech", name: "tech", widget: "string"}
-      - {label: "Repo", name: "repo", widget: "string"}
-      - {label: "Demo", name: "demo", widget: "string"}
-  - name: 'details'
-    label: 'Project details'
-    folder: 'content/details'
-    format: 'frontmatter'
-    create: true
-    editor:
-      preview: false
-    widget: "select"      
-    fields:
-      - {label: "Layout", name: "layout", widget: "hidden", default: "details"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Featured Image", name: "image", widget: "image"}
-      - {label: "Tech", name: "tech", widget: "string"}
-      - {label: "Description", name: "description", widget: "string"}
-      - {label: "Features", name: "features", widget: "string"}
-      - {label: "Feature icon", name: "feature icon", widget: "string"}
+      - {label: "Cover", name: "cover", widget: "image"}
+      - {label: "Tech", name: "tech", widget: "list"}      
       - {label: "Repo", name: "repo", widget: "string"}
       - {label: "Demo", name: "demo", widget: "string"}
