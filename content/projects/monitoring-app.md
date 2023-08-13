@@ -1,0 +1,22 @@
+---
+layout: project
+title: Monitoring App
+thumbnail: /images/monitoring.jpg
+cover: /images/monitoring.jpg
+tech:
+  - tech2: Typescript
+    tech1: React
+    tech3: Tailwind CSS
+    tech4: "-"
+    tech5: "-"
+features:
+  - feature1: Zustand library for state management
+    feature2: i18Next for internationalization
+    feature3: Live generation of random alarms that update UI
+    feature4: Customization including dark mode color palette and font size
+    feature5: "-"
+    feature6: "-"
+repo: https://github.com/ZouhairEM/monitoring/
+demo: https://zouhairem.github.io/monitoring
+---
+An app made to simulate the monitoring of patient activity. That's the idea, but it was only built for fun. This helped me improve my understanding on structuring a small-to-medium scale application.
