@@ -60,20 +60,12 @@ collections:
         label: Tech
         widget: list
         fields:
-          - {label: Tech1, name: tech1, widget: string}
-          - {label: Tech2, name: tech2, widget: string}
-          - {label: Tech3, name: tech3, widget: string}
-          - {label: Tech4, name: tech4, widget: string}
-          - {label: Tech5, name: tech5, widget: string}
+          - {label: Name, name: name, widget: string}
       - name: features
         label: Features
         widget: list
         fields:
-          - {label: Feature1, name: feature1, widget: string}
-          - {label: Feature2, name: feature2, widget: string}
-          - {label: Feature3, name: feature3, widget: string}
-          - {label: Feature4, name: feature4, widget: string}
-          - {label: Feature5, name: feature5, widget: string}          
-          - {label: Feature6, name: feature6, widget: string}                    
+          - {label: Name, name: name, widget: string}
+          - {label: "Featured Image", name: "thumbnail", widget: "image", required: false}
       - {label: "Repo", name: "repo", widget: "string"}
       - {label: "Demo", name: "demo", widget: "string"}
