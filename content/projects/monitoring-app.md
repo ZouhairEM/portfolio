@@ -24,7 +24,7 @@ features:
   - name: i18Next for internationalization
     thumbnail: /images/i18next.svg
   - name: Live generation of random alarms that update UI
-  - name: Customization including dark mode color palette and font size
+  - name: Customization with dark mode, color palette and font size
 repo: https://github.com/ZouhairEM/monitoring/
 demo: https://zouhairem.github.io/monitoring
 ---
