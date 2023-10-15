@@ -9,7 +9,9 @@ tech:
     tech3: Tailwind CSS
     tech4: "-"
     tech5: "-"
-    name: test
+    name: React
+  - name: Typescript
+  - name: Tailwind CSS
 features:
   - feature1: Zustand library for state management
     feature2: i18Next for internationalization
@@ -17,7 +19,11 @@ features:
     feature4: Customization including dark mode color palette and font size
     feature5: "-"
     feature6: "-"
-    name: test
+    name: Zustand library for state management
+    thumbnail: /images/zustand.svg
+  - name: i18Next for internationalization
+    thumbnail: /images/i18next.svg
+  - name: Live generation of random alarms that update UI
 repo: https://github.com/ZouhairEM/monitoring/
 demo: https://zouhairem.github.io/monitoring
 ---
