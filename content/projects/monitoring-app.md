@@ -3,8 +3,8 @@ layout: project
 title: Monitoring App
 thumbnail: /images/monitoring.jpg
 description: An app made to simulate the monitoring of patient activity. This
-  helped me improve my understanding on structuring a small-to-medium scale
-  application.
+  helped me improve my understanding on structuring small-to-medium scale
+  applications.
 cover: /images/monitoring.jpg
 tech:
   - name: React
