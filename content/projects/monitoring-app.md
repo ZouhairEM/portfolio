@@ -9,6 +9,7 @@ tech:
     tech3: Tailwind CSS
     tech4: "-"
     tech5: "-"
+    name: test
 features:
   - feature1: Zustand library for state management
     feature2: i18Next for internationalization
@@ -16,6 +17,7 @@ features:
     feature4: Customization including dark mode color palette and font size
     feature5: "-"
     feature6: "-"
+    name: test
 repo: https://github.com/ZouhairEM/monitoring/
 demo: https://zouhairem.github.io/monitoring
 ---
