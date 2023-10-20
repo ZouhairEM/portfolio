@@ -4,54 +4,61 @@ import Layout from '@/components/Layout';
 import LearnedSkill from '@/components/LearnedSkill';
 import ProjectBio from '@/components/ProjectBio';
 import { useEffect, useState } from 'react';
-import { Content } from '@/types/content';
+import { Project, Content } from '@/types/content';
 import fs from 'fs';
 import matter from 'gray-matter';
 import Link from 'next/link';
 
 export async function getStaticProps() {
-  // List of files in blgos folder
-  const filesInBlogs = fs.readdirSync('./content/skill');
+  const projects = fs
+    .readdirSync('./content/projects')
+    .map(function (filename) {
+      const projectContent = fs.readFileSync(
+        `./content/projects/${filename}`,
+        'utf8'
+      );
 
-  // Get the front matter and slug (the filename without .md) of all files
-  const blogs = filesInBlogs.map((filename) => {
-    const file = fs.readFileSync(`./content/skill/${filename}`, 'utf8');
-    const matterData = matter(file);
+      return {
+        ...matter(projectContent).data,
+        slug: filename.slice(0, filename.indexOf('.')),
+      };
+    });
 
-    return {
-      ...matterData.data, // matterData.data contains front matter
-      slug: filename.slice(0, filename.indexOf('.')),
-    };
-  });
 
   return {
     props: {
-      blogs,
+      projects,
     },
   };
 }
 
-export default function Home() {
-  const [content, setContent] = useState<Content | null>(null);
+interface HomeProps {
+  about: any;
+  postsDirectory: any;
+  projects: Project[];
+}
 
+export default function Home({ about, projects, postsDirectory }: HomeProps) {
+  const [localContent, setLocalContent] = useState<Content | null>(null);
+
+  console.log(postsDirectory);
   useEffect(() => {
-    const getContent = async () => {
+    async function getContent() {
       try {
-        const query = await fetch('http://localhost:5000/content');
-        if (!query.ok) {
-          throw new Error('Failed to fetch data from the server.');
-        }
+        const query = await fetch('http://localhost:5000/localContent');
         const data = await query.json();
-        setContent(data);
+        setLocalContent(data);
       } catch (error) {
-        console.error('Error fetching data:', error);
-        setContent(null);
+        setLocalContent(null);
       }
-    };
+    }
+
     getContent();
   }, []);
 
-  const { aboutMe, projects = [], skills = [] } = content ?? {};
+  const { aboutMe, skills = [] } = localContent ?? {};
+
+  console.log(about);
 
   return (
     <Layout>
@@ -69,7 +76,7 @@ export default function Home() {
             alt="Zouhair El-Mariami"
           />
         </section>
-        {content && (
+        {localContent && (
           <>
             <div className="grid w-full grid-cols-3 gap-0 text-center sm:grid-cols-12 sm:gap-14 sm:text-left lg:gap-10">
               <section
@@ -79,7 +86,8 @@ export default function Home() {
                 <h3 className="mb-2">About me</h3>
                 <div
                   className="flex flex-col gap-2"
-                  dangerouslySetInnerHTML={{ __html: aboutMe ?? '' }}
+                  // dangerouslySetInnerHTML={{ __html: aboutMe ?? '' }}
+                  dangerouslySetInnerHTML={{ __html: 'lol' ?? '' }}
                 />
               </section>
               <section
@@ -104,15 +112,12 @@ export default function Home() {
                 Passion projects
               </h3>
               <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                {projects.map((project, i) => (
+                {projects.map((project, i: number) => (
                   <Link
                     href={{
-                      pathname: '/project_details',
+                      pathname: `/${project.slug ?? 'project_details'}`,
                       query: {
-                        title: JSON.stringify(project.title),
-                        details: JSON.stringify(project.details),
-                        demo: JSON.stringify(project.demo),
-                        repo: JSON.stringify(project.repo),
+                        details: JSON.stringify(project),
                       },
                     }}
                     key={i}

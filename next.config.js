@@ -5,6 +5,7 @@ const nextConfig = {
       test: /\.svg$/i,
       issuer: /\.(js|ts|jsx|tsx)$/,
       use: ['@svgr/webpack'],
+      
     });
 
     return config;

@@ -1,24 +1,23 @@
 export interface Content {
-  aboutMe: string;
+  aboutMe: string[];
   projects: Project[];
   skills: string[][];
 }
 
 export interface Project {
+  layout: string;
   title: string;
   thumbnail: string;
-  tech: string[];
+  cover: string;
+  description: string;
+  tech: {
+    name: string;
+  }[];
+  features: {
+    name: string;
+    thumbnail?: string;
+  }[];
   repo: string;
-  demo: string | null;
-  details: {
-    cover: string;
-    description: string;
-    features: {
-      title: string;
-      icon: string | null;
-    }[];
-    demo: string | null;
-    repo: string;
-    tech: string[];
-  };
+  demo?: string | null;
+  slug: string;
 }

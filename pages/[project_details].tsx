@@ -6,17 +6,11 @@ import { Project } from '@/types/content';
 
 export default function ProjectDetails() {
   const router = useRouter();
-  let { details } = router.query;
-
-  const title =
-    typeof router.query.title === 'string'
-      ? JSON.parse(router.query.title)
-      : '';
-
+  const { details } = router.query;
   const detailsString = Array.isArray(details) ? details[0] : details;
-  const projectDetails: Project['details'] = detailsString
+  const projectDetails: Project = detailsString
     ? JSON.parse(detailsString)
-    : { cover: '', description: '', features: [], tech: [] };
+    : { cover: '', description: '', features: [], title: '', tech: [] };
 
   return (
     <Layout>
@@ -35,14 +29,14 @@ export default function ProjectDetails() {
         <hr className="border-t-1 mb-4 mt-4 border text-secondary opacity-60" />
 
         <section>
-          <h2 className="text-center sm:text-left">{title}</h2>
+          <h2 className="text-center sm:text-left">{projectDetails.title}</h2>
           {projectDetails.cover && (
             <Image
               src={projectDetails.cover}
               width={500}
               height={500}
               priority
-              alt={title}
+              alt={projectDetails.title}
               className="w-full rounded object-cover object-center py-4"
             />
           )}
@@ -50,9 +44,9 @@ export default function ProjectDetails() {
             {projectDetails.tech.map((t) => (
               <p
                 className="h-1/2 rounded-md border border-secondary border-opacity-60 bg-primary-100 p-2 text-xs group-hover:border-primary-100 group-hover:border-opacity-0 group-hover:bg-opacity-0"
-                key={t}
+                key={t.name}
               >
-                {t}
+                {t.name}
               </p>
             ))}
           </div>
@@ -86,18 +80,18 @@ export default function ProjectDetails() {
           <h3 className="text-center sm:text-left">Features</h3>
           <ul className="list-circle p-4">
             {projectDetails.features.map((feature) => (
-              <li key={feature.title} className="muted py-1">
+              <li key={feature.name} className="muted py-1">
                 <p className="flex items-center gap-2">
-                  {feature.icon && (
+                  {feature.thumbnail && (
                     <Image
-                      src={feature.icon}
+                      src={feature.thumbnail}
                       width={20}
                       height={20}
                       className="col-span-2 rounded-sm opacity-90 shadow-2xl"
-                      alt={feature.title}
+                      alt={feature.name}
                     />
                   )}{' '}
-                  {feature.title}
+                  {feature.name}
                 </p>
               </li>
             ))}

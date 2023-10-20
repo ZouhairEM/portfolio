@@ -25,11 +25,9 @@ collections:
     create: true
     editor:
       preview: false
-    widget: "select"      
+    widget: "text"
     fields:
-      - {label: "Layout", name: "layout", widget: "hidden", default: "about"}
       - {label: "About", name: "about", widget: "string"}
-      - {label: "Body", name: "body", widget: "markdown"}
   - name: 'skills'
     label: 'Skills'
     folder: 'content/skill'
