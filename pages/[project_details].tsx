@@ -32,7 +32,7 @@ export default function ProjectDetails() {
           <h2 className="text-center sm:text-left">{projectDetails.title}</h2>
           {projectDetails.cover && (
             <Image
-              src={`/static${projectDetails.cover}`}
+              src={`${projectDetails.cover}`}
               width={500}
               height={500}
               priority
