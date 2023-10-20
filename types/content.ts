@@ -1,7 +1,7 @@
 export interface Content {
   aboutMe: string[];
   projects: Project[];
-  skills: string[][];
+  skills: Skill[];
 }
 
 export interface Project {
@@ -20,4 +20,11 @@ export interface Project {
   repo: string;
   demo?: string | null;
   slug: string;
+}
+
+export interface Skill{
+  layout?: string;
+  skill: string;
+  slug?: string;
+  thumbnail: string;
 }

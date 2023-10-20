@@ -7,7 +7,7 @@ function ProjectBio({ project }: { project: Project }) {
       <h4>{project.title}</h4>
       {project.thumbnail && (
         <Image
-          src={project.thumbnail}
+          src={`/static${project.thumbnail}`}
           alt={project.title}
           width={150}
           height={150}
