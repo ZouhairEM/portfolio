@@ -54,7 +54,7 @@
                     "description": "This portfolio was built as a headless CMS with Next.JS. Most content is statically generated using Netlify CMS, including this text right here. It's a revamp/upgrade of a previous portfolio made with Nuxt.JS and Netfliy CMS. I made this change to keep learning and improving and make it easier for myself to update my portfolio.",
                     "features": [
                         {
-                            "title": "Dynamic content with Netlify CMS and SSG",
+                            "title": "Dynamic content with Netlify CMS and Static Site Generation (SSG)",
                             "icon": "/features/strapi.svg"
                         },
                         {

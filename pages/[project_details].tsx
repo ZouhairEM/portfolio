@@ -30,6 +30,16 @@ export default function ProjectDetails() {
 
         <section>
           <h2 className="text-center sm:text-left">{projectDetails.title}</h2>
+          <div className="tech mt-4 flex h-16 flex-wrap gap-2">
+            {projectDetails.tech.map((t) => (
+              <p
+                className="h-1/2 rounded-md border border-secondary border-opacity-60 bg-primary-100 p-2 text-xs group-hover:border-primary-100 group-hover:border-opacity-0 group-hover:bg-opacity-0"
+                key={t.name}
+              >
+                {t.name}
+              </p>
+            ))}
+          </div>
           {projectDetails.cover && (
             <Image
               src={`/static/${projectDetails.cover}`}
@@ -40,16 +50,6 @@ export default function ProjectDetails() {
               className="w-full rounded object-cover object-center py-4"
             />
           )}
-          <div className="tech mt-2 flex h-16 flex-wrap gap-2">
-            {projectDetails.tech.map((t) => (
-              <p
-                className="h-1/2 rounded-md border border-secondary border-opacity-60 bg-primary-100 p-2 text-xs group-hover:border-primary-100 group-hover:border-opacity-0 group-hover:bg-opacity-0"
-                key={t.name}
-              >
-                {t.name}
-              </p>
-            ))}
-          </div>
           <p>{projectDetails.description}</p>
         </section>
 
