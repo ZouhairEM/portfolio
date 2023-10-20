@@ -51,16 +51,16 @@ export async function getStaticProps() {
   };
 }
 
-interface HomeProps {
-  about: any;
+interface SSGContent {
+  about: Content['about'];
   skills: Content['skills'];
-  projects: Project[];
+  projects: Content['projects'];
 }
 
-export default function Home({ about, skills, projects }: HomeProps) {
-  const [localContent, setContent] = useState<Content | any | null>(null);
+export default function Home({ about, skills, projects }: SSGContent) {
+  const [, setContent] = useState<Content | null>(null);
   const local = false;
-  const markdownData = { about, skills, projects };
+  const SSGData = { about, skills, projects };
 
   useEffect(() => {
     async function getContent() {
@@ -71,17 +71,12 @@ export default function Home({ about, skills, projects }: HomeProps) {
           setContent(data);
         }
       } catch (error) {
-        setContent(markdownData);
         setContent(null);
       }
     }
 
     getContent();
   }, []);
-
-  const { localAbout, localSkills = [] } = localContent ?? {};
-
-  console.log('skills', skills);
 
   return (
     <Layout>
@@ -99,58 +94,57 @@ export default function Home({ about, skills, projects }: HomeProps) {
             alt="Zouhair El-Mariami"
           />
         </section>
-        {localContent ||
-          (markdownData && (
-            <>
-              <div className="grid w-full grid-cols-3 gap-0 text-center sm:grid-cols-12 sm:gap-14 sm:text-left lg:gap-10">
-                <section
-                  id="about"
-                  className="col-span-12 flex flex-col sm:col-span-6"
-                >
-                  <h3 className="mb-2">About me</h3>
-                  <div
-                    className="flex flex-col gap-2"
-                    dangerouslySetInnerHTML={{ __html: about[0].about ?? '' }}
-                  />
-                </section>
-                <section
-                  id="skills"
-                  className="col-span-12 my-40 sm:col-span-6 sm:my-0"
-                >
-                  <h3 className="mb-2">Skills</h3>
-                  <ul className="flex flex-wrap justify-center gap-2 rounded shadow-2xl sm:justify-normal">
-                    {skills.map((skill) => (
-                      <LearnedSkill
-                        key={skill.skill}
-                        skill={skill.skill}
-                        thumbnail={skill.thumbnail}
-                      />
-                    ))}
-                  </ul>
-                </section>
-              </div>
-              <section id="passion-projects" className="mb-40 sm:my-40 sm:mb-0">
-                <h3 className="mb-4 text-center sm:text-left">
-                  Passion projects
-                </h3>
-                <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                  {projects.map((project, i: number) => (
-                    <Link
-                      href={{
-                        pathname: `/${project.slug ?? 'project_details'}`,
-                        query: {
-                          details: JSON.stringify(project),
-                        },
-                      }}
-                      key={i}
-                    >
-                      <ProjectBio project={project} />
-                    </Link>
-                  ))}
-                </div>
+        {SSGData && (
+          <>
+            <div className="grid w-full grid-cols-3 gap-0 text-center sm:grid-cols-12 sm:gap-14 sm:text-left lg:gap-10">
+              <section
+                id="about"
+                className="col-span-12 flex flex-col sm:col-span-6"
+              >
+                <h3 className="mb-2">About me</h3>
+                <div
+                  className="flex flex-col gap-2"
+                  dangerouslySetInnerHTML={{ __html: about[0].about ?? '' }}
+                />
               </section>
-            </>
-          ))}
+              <section
+                id="skills"
+                className="col-span-12 my-40 sm:col-span-6 sm:my-0"
+              >
+                <h3 className="mb-2">Skills</h3>
+                <ul className="flex flex-wrap justify-center gap-2 rounded shadow-2xl sm:justify-normal">
+                  {skills.map((skill) => (
+                    <LearnedSkill
+                      key={skill.skill}
+                      skill={skill.skill}
+                      thumbnail={skill.thumbnail}
+                    />
+                  ))}
+                </ul>
+              </section>
+            </div>
+            <section id="passion-projects" className="mb-40 sm:my-40 sm:mb-0">
+              <h3 className="mb-4 text-center sm:text-left">
+                Passion projects
+              </h3>
+              <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                {projects.map((project, i: number) => (
+                  <Link
+                    href={{
+                      pathname: `/${project.slug ?? 'project_details'}`,
+                      query: {
+                        details: JSON.stringify(project),
+                      },
+                    }}
+                    key={i}
+                  >
+                    <ProjectBio project={project} />
+                  </Link>
+                ))}
+              </div>
+            </section>
+          </>
+        )}
       </main>
     </Layout>
   );

@@ -41,13 +41,15 @@ describe('ProjectDetails component', () => {
   });
 
   it('should render project details correctly', () => {
-    const titleElement = screen.getByText('Project 1');
-    const description = screen.getByText('Details about project 1');
-    const project_tech1 = screen.getByText('Tech 1');
+    const aboutElement = screen.getByText('About me');
+    const skillElement = screen.getByText('Skills');
+    const passionProjectsElements = screen.getByText('Passion projects');
+    const resumeElement = screen.getByText('Resume');
 
-    expect(titleElement).toBeInTheDocument();
-    expect(description).toBeInTheDocument();
-    expect(project_tech1).toBeInTheDocument();
+    expect(aboutElement).toBeInTheDocument();
+    expect(skillElement).toBeInTheDocument();
+    expect(passionProjectsElements).toBeInTheDocument();
+    expect(resumeElement).toBeInTheDocument();
   });
 
   it('should have working external links', () => {

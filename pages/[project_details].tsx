@@ -32,7 +32,7 @@ export default function ProjectDetails() {
           <h2 className="text-center sm:text-left">{projectDetails.title}</h2>
           {projectDetails.cover && (
             <Image
-              src={`${projectDetails.cover}`}
+              src={`/static/${projectDetails.cover}`}
               width={500}
               height={500}
               priority
@@ -84,7 +84,7 @@ export default function ProjectDetails() {
                 <p className="flex items-center gap-2">
                   {feature.thumbnail && (
                     <Image
-                      src={`/static${feature.thumbnail}`}
+                      src={`/static/${feature.thumbnail}`}
                       width={20}
                       height={20}
                       className="col-span-2 rounded-sm opacity-90 shadow-2xl"

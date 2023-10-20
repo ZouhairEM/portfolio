@@ -6,29 +6,27 @@ import LearnedSkill from '@/components/LearnedSkill';
 describe('LearnedSkill component', () => {
   it('should render a learned skill', () => {
     const mockSkill = {
+      layout: '',
       skill: 'Testing',
-      img: '/testing.png',
-      alt: 'Testing skill',
+      thumbnail: 'testing.png',
     };
 
     render(
       <LearnedSkill
+        key={mockSkill.skill}
         skill={mockSkill.skill}
-        img={mockSkill.img}
-        alt={mockSkill.alt}
+        thumbnail={mockSkill.thumbnail}
       />
     );
 
     const renderedSkill = {
       name: screen.getAllByText('Testing')[0],
-      alt: screen.getByAltText('Testing skill'),
       img: screen
-        .getByAltText('Testing skill')
+        .getByAltText('Testing')
         .parentElement?.querySelector('img'),
     };
 
     expect(renderedSkill.name).toHaveTextContent('Testing');
     expect(renderedSkill.img).toBeVisible();
-    expect(renderedSkill.alt).toHaveAttribute('alt', 'Testing skill');
   });
 });

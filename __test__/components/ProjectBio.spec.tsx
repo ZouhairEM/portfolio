@@ -9,11 +9,20 @@ describe('ProjectBio cpmponent', () => {
   });
 
   const mockProject = {
+    layout: '',
     title: 'Mock App',
     thumbnail: '/mock_app.png',
-    tech: ['Batman UI', 'Superman CSS', 'Spiderman.JS'],
+    cover: '',
+    description: '',
+    tech: [
+      { name: 'Batman UI' },
+      { name: 'Superman CSS' },
+      { name: 'Spiderman UI' },
+    ],
+    features: [{ name: '', thumbnail: '' }],
     repo: '#',
     demo: '#',
+    slug: '#',
   };
 
   it('should render a project', () => {

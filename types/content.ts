@@ -1,5 +1,9 @@
 export interface Content {
-  aboutMe: string[];
+  about: {
+    about: string;
+    layout: string;
+    slug: string;
+  }[];
   projects: Project[];
   skills: Skill[];
 }
