@@ -14,7 +14,7 @@ export default function ProjectDetails() {
 
   return (
     <Layout>
-      <main className="container flex flex-col gap-4 py-16">
+      <main className="container flex flex-col gap-4 p-6 py-16">
         <section className="flex transition-colors hover:text-secondary">
           <button
             type="button"
@@ -30,7 +30,7 @@ export default function ProjectDetails() {
 
         <section>
           <h2 className="text-center sm:text-left">{projectDetails.title}</h2>
-          <div className="tech mt-4 flex h-16 flex-wrap gap-2">
+          <div className="tech mt-6 flex h-16 flex-wrap gap-2">
             {projectDetails.tech.map((t) => (
               <p
                 className="h-1/2 rounded-md border border-secondary border-opacity-60 bg-primary-100 p-2 text-xs group-hover:border-primary-100 group-hover:border-opacity-0 group-hover:bg-opacity-0"
