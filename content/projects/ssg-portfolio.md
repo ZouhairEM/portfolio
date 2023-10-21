@@ -3,9 +3,9 @@ layout: project
 title: SSG Portfolio
 thumbnail: /images/cms.jpg
 description: This portfolio was built as a headless CMS with Next.JS. Most
-  content is statically generated (SSG) using Netlify CMS, including this text right
-  here. It's a revamp/upgrade of a previous portfolio made with Nuxt.JS and
-  Netfliy CMS. I made this change to keep learning and improving and make it
+  content is statically generated (SSG) using Netlify CMS, including this text
+  right here. It's a revamp/upgrade of a previous portfolio made with Nuxt.JS
+  and Netfliy CMS. I made this change to keep learning and improving and make it
   easier for myself to update my portfolio.
 tech:
   - name: Headless CMS

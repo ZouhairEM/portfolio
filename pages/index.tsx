@@ -90,7 +90,7 @@ export default function Home({ about, skills, projects }: SSGContent) {
             src="/me.jpeg"
             width={150}
             height={150}
-            className="ml-0 rounded-full opacity-80 shadow-inner"
+            className="min-h-[150px] max-h-[150px] ml-0 rounded-full opacity-80 shadow-inner"
             alt="Zouhair El-Mariami"
           />
         </section>

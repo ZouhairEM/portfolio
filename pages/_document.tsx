@@ -4,10 +4,14 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <title>
+          Portfolio Zouhair El-Mariami | Frontend Developer
+        </title>
         <script
           async
           src="https://identity.netlify.com/v1/netlify-identity-widget.js"
         />
+          <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
       <body>
         <Main />
